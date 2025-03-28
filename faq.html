@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Find answers to the most frequently asked questions about ClothPedia." />
+  <title>FAQ | ClothPedia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="soft-header">
+    <div class="container">
+      <div class="logo">ClothPedia</div>
+      <nav aria-label="Main Navigation">
+        <a href="index.html">Home</a>
+        <a href="categories.html">Categories</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="faq.html" class="active">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro-hero">
+      <div class="container">
+        <h1>Frequently Asked Questions</h1>
+        <p class="lead">Below are the most common questions about ClothPedia. If you have any more questions, don’t
+          hesitate to reach out!</p>
+      </div>
+    </section>
+
+    <section class="faq-container">
+      <div class="container">
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">What is ClothPedia?</button>
+          <div class="faq-answer">
+            <p>ClothPedia is an online platform that educates about clothing types, seasonal fashion, and cultural
+              attire, designed to inform and inspire users.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">Who created ClothPedia?</button>
+          <div class="faq-answer">
+            <p>ClothPedia was created by Haseeb and Shehzam, two individuals passionate about fashion, design, and the
+              cultural stories behind clothing.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">Can I learn about different fabrics and their
+            uses?</button>
+          <div class="faq-answer">
+            <p>Yes! We provide information on various fabrics, from common ones like cotton and wool to more specific
+              ones like silk or linen, and their uses in different seasons.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">Where can I explore clothing collections?</button>
+          <div class="faq-answer">
+            <p>You can explore seasonal and cultural clothing collections by visiting our Categories section, where
+              we’ve curated visuals for men’s and women’s fashion.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="soft-footer">
+    <div class="container">
+      <p>&copy; 2025 ClothPedia — care and calm.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Enhanced FAQ toggle with ARIA attribute updates for better accessibility
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const answer = button.nextElementSibling;
+        const isExpanded = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', !isExpanded);
+        answer.classList.toggle('show');
+        button.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+
+</html>

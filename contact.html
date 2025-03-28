@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Reach out to ClothPedia for inquiries, feedback, or support.">
+  <title>Contact | ClothPedia</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="soft-header">
+    <div class="container">
+      <div class="logo">ClothPedia</div>
+      <nav aria-label="Main Navigation">
+        <a href="index.html">Home</a>
+        <a href="categories.html">Categories</a>
+        <a href="about.html">About</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="intro-hero">
+      <div class="container">
+        <h1>Get in Touch</h1>
+        <p class="lead">We'd love to hear from you! Whether it's feedback, questions, or something else, we are here to
+          help.</p>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <div class="container">
+        <div class="contact-info">
+          <h2>Contact Us</h2>
+          <p>Have a question or feedback? Fill out the form below and we'll get back to you soon.</p>
+        </div>
+
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="name">Your Full Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your Name">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Your Email Address</label>
+            <input type="email" id="email" name="email" required placeholder="Email Address">
+          </div>
+
+          <div class="form-group">
+            <label for="topic">Subject</label>
+            <select id="topic" name="topic" required>
+              <option value="" disabled selected>Select a topic</option>
+              <option value="general">General Inquiry</option>
+              <option value="feedback">Feedback</option>
+              <option value="support">Support</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Type your message here"></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Send Message</button>
+        </form>
+
+        <div class="contact-note">
+          <p>We aim to respond within 1-2 business days. Thanks for reaching out!</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="soft-footer">
+    <div class="container">
+      <p>&copy; 2025 ClothPedia — care and calm.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("contactForm").addEventListener("submit", function (e) {
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const topic = document.getElementById("topic").value;
+      const message = document.getElementById("message").value.trim();
+
+      if (!name || !email || !topic || !message) {
+        e.preventDefault();
+        alert("Please fill in all required fields before submitting.");
+      }
+    });
+  </script>
+</body>
+
+</html>
